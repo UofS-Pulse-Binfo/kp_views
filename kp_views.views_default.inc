@@ -13,8 +13,6 @@ require_once 'default_views/kp_views.kp_search.feature.inc';
 function kp_views_views_default_views() {
   $views = array();
 
-dpm('in default views hook');
-
   $view = kp_defaultviews_sequence_search();
   $views[$view->name] = $view;
 

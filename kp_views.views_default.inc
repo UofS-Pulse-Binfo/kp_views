@@ -6,6 +6,7 @@
  */
 
 require_once 'default_views/kp_views.kp_search.feature.inc';
+require_once 'default_views/kp_views.uofs_research.organism.inc';
 
 /**
  * Implements hook_views_default_views().
@@ -13,6 +14,17 @@ require_once 'default_views/kp_views.kp_search.feature.inc';
 function kp_views_views_default_views() {
   $views = array();
 
+  // Tag: UofS Research /////////////////////////
+  $view = kp_defaultviews_uofs_crop_species();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_uofs_model_species();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_uofs_wild_species();
+  $views[$view->name] = $view;
+
+  // Tag: KP Search /////////////////////////////
   $view = kp_defaultviews_sequence_search();
   $views[$view->name] = $view;
 

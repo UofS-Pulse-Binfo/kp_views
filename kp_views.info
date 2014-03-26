@@ -1,0 +1,7 @@
+package = KnowPulse
+name = KnowPulse Views
+description = Provides default views used in KnowPulse
+version = 3.x-1.x
+core = 7.x
+
+files[] = views_handlers/kp_views_groups_plugin.inc

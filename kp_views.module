@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * KP Views Module file
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function kp_views_views_api() {
+  return array(
+    'api' => 3,
+  );
+}

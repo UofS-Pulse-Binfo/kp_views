@@ -8,6 +8,7 @@
 require_once 'default_views/kp_views.kp_search.feature.inc';
 require_once 'default_views/kp_views.uofs_research.organism.inc';
 require_once 'default_views/kp_views.uofs_research.misc.inc';
+require_once 'default_views/kp_views.tripal_page_charts.inc';
 
 /**
  * Implements hook_views_default_views().
@@ -45,6 +46,16 @@ function kp_views_views_default_views() {
   $views[$view->name] = $view;
 
   $view = kp_defaultviews_genotypes_search();
+  $views[$view->name] = $view;
+
+  // Tag: KP Pages //////////////////////////////
+  $view = kp_defaultviews_feature_genotype_piechart();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_feature_type_piechart();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_organism_type_piechart();
   $views[$view->name] = $view;
 
   return $views;

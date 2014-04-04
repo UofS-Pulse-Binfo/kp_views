@@ -7,6 +7,7 @@
 
 require_once 'default_views/kp_views.kp_search.feature.inc';
 require_once 'default_views/kp_views.uofs_research.organism.inc';
+require_once 'default_views/kp_views.uofs_research.misc.inc';
 
 /**
  * Implements hook_views_default_views().
@@ -22,6 +23,15 @@ function kp_views_views_default_views() {
   $views[$view->name] = $view;
 
   $view = kp_defaultviews_uofs_wild_species();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_uofs_publications();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_uofs_projects();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_uofs_research_areas();
   $views[$view->name] = $view;
 
   // Tag: KP Search /////////////////////////////

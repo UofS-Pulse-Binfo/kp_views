@@ -4,7 +4,7 @@
  * @file
  * Default views with
  *  - Tag = UofS Research
- *  - base_table = feature
+ *  - base_table = organism
  */
 
 /**

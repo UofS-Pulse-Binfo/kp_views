@@ -43,11 +43,32 @@ $handler->display->display_options['empty']['area']['field'] = 'area';
 $handler->display->display_options['empty']['area']['empty'] = TRUE;
 $handler->display->display_options['empty']['area']['content'] = 'Narrow down the sequences displayed by setting any of the above options. If you would like to browse all sequences in KnowPulse then click "Search" with the defaults selected.';
 $handler->display->display_options['empty']['area']['format'] = 'full_html';
+/* Relationship: Chado Feature: feature_id => Project Feature */
+$handler->display->display_options['relationships']['feature_id_to_project_feature']['id'] = 'feature_id_to_project_feature';
+$handler->display->display_options['relationships']['feature_id_to_project_feature']['table'] = 'feature';
+$handler->display->display_options['relationships']['feature_id_to_project_feature']['field'] = 'feature_id_to_project_feature';
+$handler->display->display_options['relationships']['feature_id_to_project_feature']['label'] = 'Project Feature';
+/* Relationship: Chado Project Feature: project_id => Project */
+$handler->display->display_options['relationships']['project_id_to_project']['id'] = 'project_id_to_project';
+$handler->display->display_options['relationships']['project_id_to_project']['table'] = 'project_feature';
+$handler->display->display_options['relationships']['project_id_to_project']['field'] = 'project_id_to_project';
+$handler->display->display_options['relationships']['project_id_to_project']['relationship'] = 'feature_id_to_project_feature';
+$handler->display->display_options['relationships']['project_id_to_project']['label'] = 'Project';
 /* Field: Content: Nid */
 $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
 $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Field: Node URL */
+$handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+$handler->display->display_options['fields']['nid_1']['table'] = 'node';
+$handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+$handler->display->display_options['fields']['nid_1']['ui_name'] = 'Node URL';
+$handler->display->display_options['fields']['nid_1']['label'] = '';
+$handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+$handler->display->display_options['fields']['nid_1']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['nid_1']['alter']['text'] = 'node/[nid]';
+$handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
 /* Field: Chado Feature: Feature Id */
 $handler->display->display_options['fields']['feature_id']['id'] = 'feature_id';
 $handler->display->display_options['fields']['feature_id']['table'] = 'feature';
@@ -57,8 +78,9 @@ $handler->display->display_options['fields']['feature_id']['exclude'] = TRUE;
 $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
 $handler->display->display_options['fields']['name_1']['table'] = 'feature';
 $handler->display->display_options['fields']['name_1']['field'] = 'name';
-$handler->display->display_options['fields']['name_1']['alter']['make_link'] = TRUE;
-$handler->display->display_options['fields']['name_1']['alter']['path'] = 'node/[nid]';
+$handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['name']['alter']['path'] = '[nid_1]';
+$handler->display->display_options['fields']['name']['alter']['target'] = '_blank';
 /* Field: Chado Cvterm: Name */
 $handler->display->display_options['fields']['name']['id'] = 'name';
 $handler->display->display_options['fields']['name']['table'] = 'cvterm';
@@ -176,6 +198,30 @@ $handler->display->display_options['filters']['type_id']['values_form_type'] = '
 $handler->display->display_options['filters']['type_id']['select_multiple'] = TRUE;
 $handler->display->display_options['filters']['type_id']['select_optional'] = TRUE;
 $handler->display->display_options['filters']['type_id']['max_length'] = '40';
+/* Filter criterion: Chado Project: Name */
+$handler->display->display_options['filters']['name_2']['id'] = 'name_2';
+$handler->display->display_options['filters']['name_2']['table'] = 'project';
+$handler->display->display_options['filters']['name_2']['field'] = 'name';
+$handler->display->display_options['filters']['name_2']['relationship'] = 'project_id_to_project';
+$handler->display->display_options['filters']['name_2']['value'] = array(
+  'All' => 'All',
+);
+$handler->display->display_options['filters']['name_2']['group'] = 1;
+$handler->display->display_options['filters']['name_2']['exposed'] = TRUE;
+$handler->display->display_options['filters']['name_2']['expose']['operator_id'] = 'name_2_op';
+$handler->display->display_options['filters']['name_2']['expose']['label'] = 'Project';
+$handler->display->display_options['filters']['name_2']['expose']['description'] = 'The project producing the markers you are interest in';
+$handler->display->display_options['filters']['name_2']['expose']['operator'] = 'name_2_op';
+$handler->display->display_options['filters']['name_2']['expose']['identifier'] = 'name_2';
+$handler->display->display_options['filters']['name_2']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['name_2']['values_form_type'] = 'select';
+$handler->display->display_options['filters']['name_2']['select_multiple'] = TRUE;
+$handler->display->display_options['filters']['name_2']['select_optional'] = TRUE;
+$handler->display->display_options['filters']['name_2']['max_length'] = '40';
 /* Filter criterion: Feature Name */
 $handler->display->display_options['filters']['name']['id'] = 'name';
 $handler->display->display_options['filters']['name']['table'] = 'feature';
@@ -258,11 +304,32 @@ $handler->display->display_options['empty']['area']['field'] = 'area';
 $handler->display->display_options['empty']['area']['empty'] = TRUE;
 $handler->display->display_options['empty']['area']['content'] = 'Narrow down the variants displayed by setting any of the above options. If you would like to browse all variants in KnowPulse then click "Search" with the defaults selected.';
 $handler->display->display_options['empty']['area']['format'] = 'full_html';
+/* Relationship: Chado Feature: feature_id => Project Feature */
+$handler->display->display_options['relationships']['feature_id_to_project_feature']['id'] = 'feature_id_to_project_feature';
+$handler->display->display_options['relationships']['feature_id_to_project_feature']['table'] = 'feature';
+$handler->display->display_options['relationships']['feature_id_to_project_feature']['field'] = 'feature_id_to_project_feature';
+$handler->display->display_options['relationships']['feature_id_to_project_feature']['label'] = 'Project Feature';
+/* Relationship: Chado Project Feature: project_id => Project */
+$handler->display->display_options['relationships']['project_id_to_project']['id'] = 'project_id_to_project';
+$handler->display->display_options['relationships']['project_id_to_project']['table'] = 'project_feature';
+$handler->display->display_options['relationships']['project_id_to_project']['field'] = 'project_id_to_project';
+$handler->display->display_options['relationships']['project_id_to_project']['relationship'] = 'feature_id_to_project_feature';
+$handler->display->display_options['relationships']['project_id_to_project']['label'] = 'Project';
 /* Field: Content: Nid */
 $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
 $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Field: Node URL */
+$handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+$handler->display->display_options['fields']['nid_1']['table'] = 'node';
+$handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+$handler->display->display_options['fields']['nid_1']['ui_name'] = 'Node URL';
+$handler->display->display_options['fields']['nid_1']['label'] = '';
+$handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+$handler->display->display_options['fields']['nid_1']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['nid_1']['alter']['text'] = 'node/[nid]';
+$handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
 /* Field: Chado Feature: Feature Id */
 $handler->display->display_options['fields']['feature_id']['id'] = 'feature_id';
 $handler->display->display_options['fields']['feature_id']['table'] = 'feature';
@@ -272,8 +339,9 @@ $handler->display->display_options['fields']['feature_id']['exclude'] = TRUE;
 $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
 $handler->display->display_options['fields']['name_1']['table'] = 'feature';
 $handler->display->display_options['fields']['name_1']['field'] = 'name';
-$handler->display->display_options['fields']['name_1']['alter']['make_link'] = TRUE;
-$handler->display->display_options['fields']['name_1']['alter']['path'] = 'node/[nid]';
+$handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['name']['alter']['path'] = '[nid_1]';
+$handler->display->display_options['fields']['name']['alter']['target'] = '_blank';
 /* Field: Chado Cvterm: Name */
 $handler->display->display_options['fields']['name']['id'] = 'name';
 $handler->display->display_options['fields']['name']['table'] = 'cvterm';
@@ -376,6 +444,30 @@ $handler->display->display_options['filters']['type_id']['values_form_type'] = '
 $handler->display->display_options['filters']['type_id']['select_multiple'] = TRUE;
 $handler->display->display_options['filters']['type_id']['select_optional'] = TRUE;
 $handler->display->display_options['filters']['type_id']['max_length'] = '40';
+/* Filter criterion: Chado Project: Name */
+$handler->display->display_options['filters']['name_2']['id'] = 'name_2';
+$handler->display->display_options['filters']['name_2']['table'] = 'project';
+$handler->display->display_options['filters']['name_2']['field'] = 'name';
+$handler->display->display_options['filters']['name_2']['relationship'] = 'project_id_to_project';
+$handler->display->display_options['filters']['name_2']['value'] = array(
+  'All' => 'All',
+);
+$handler->display->display_options['filters']['name_2']['group'] = 1;
+$handler->display->display_options['filters']['name_2']['exposed'] = TRUE;
+$handler->display->display_options['filters']['name_2']['expose']['operator_id'] = 'name_2_op';
+$handler->display->display_options['filters']['name_2']['expose']['label'] = 'Project';
+$handler->display->display_options['filters']['name_2']['expose']['description'] = 'The project producing the markers you are interest in';
+$handler->display->display_options['filters']['name_2']['expose']['operator'] = 'name_2_op';
+$handler->display->display_options['filters']['name_2']['expose']['identifier'] = 'name_2';
+$handler->display->display_options['filters']['name_2']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['name_2']['values_form_type'] = 'select';
+$handler->display->display_options['filters']['name_2']['select_multiple'] = TRUE;
+$handler->display->display_options['filters']['name_2']['select_optional'] = TRUE;
+$handler->display->display_options['filters']['name_2']['max_length'] = '40';
 /* Filter criterion: Feature Name */
 $handler->display->display_options['filters']['name']['id'] = 'name';
 $handler->display->display_options['filters']['name']['table'] = 'feature';
@@ -461,11 +553,32 @@ function kp_defaultviews_markers_search() {
   $handler->display->display_options['relationships']['feature_id_to_featureprop']['table'] = 'feature';
   $handler->display->display_options['relationships']['feature_id_to_featureprop']['field'] = 'feature_id_to_featureprop';
   $handler->display->display_options['relationships']['feature_id_to_featureprop']['label'] = 'Marker Type (featureprop)';
+  /* Relationship: Chado Feature: feature_id => Project Feature */
+  $handler->display->display_options['relationships']['feature_id_to_project_feature']['id'] = 'feature_id_to_project_feature';
+  $handler->display->display_options['relationships']['feature_id_to_project_feature']['table'] = 'feature';
+  $handler->display->display_options['relationships']['feature_id_to_project_feature']['field'] = 'feature_id_to_project_feature';
+  $handler->display->display_options['relationships']['feature_id_to_project_feature']['label'] = 'Project Feature';
+  /* Relationship: Chado Project Feature: project_id => Project */
+  $handler->display->display_options['relationships']['project_id_to_project']['id'] = 'project_id_to_project';
+  $handler->display->display_options['relationships']['project_id_to_project']['table'] = 'project_feature';
+  $handler->display->display_options['relationships']['project_id_to_project']['field'] = 'project_id_to_project';
+  $handler->display->display_options['relationships']['project_id_to_project']['relationship'] = 'feature_id_to_project_feature';
+  $handler->display->display_options['relationships']['project_id_to_project']['label'] = 'Project';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Field: Node URL */
+$handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+$handler->display->display_options['fields']['nid_1']['table'] = 'node';
+$handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+$handler->display->display_options['fields']['nid_1']['ui_name'] = 'Node URL';
+$handler->display->display_options['fields']['nid_1']['label'] = '';
+$handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+$handler->display->display_options['fields']['nid_1']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['nid_1']['alter']['text'] = 'node/[nid]';
+$handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   /* Field: Chado Feature: Feature Id */
   $handler->display->display_options['fields']['feature_id']['id'] = 'feature_id';
   $handler->display->display_options['fields']['feature_id']['table'] = 'feature';
@@ -475,8 +588,9 @@ function kp_defaultviews_markers_search() {
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'feature';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
-  $handler->display->display_options['fields']['name_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name_1']['alter']['path'] = 'node/[nid]';
+$handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['name']['alter']['path'] = '[nid_1]';
+$handler->display->display_options['fields']['name']['alter']['target'] = '_blank';
   /* Field: Chado Featureprop: Value */
   $handler->display->display_options['fields']['value']['id'] = 'value';
   $handler->display->display_options['fields']['value']['table'] = 'featureprop';
@@ -598,6 +712,30 @@ function kp_defaultviews_markers_search() {
   $handler->display->display_options['filters']['value']['select_multiple'] = TRUE;
   $handler->display->display_options['filters']['value']['select_optional'] = TRUE;
   $handler->display->display_options['filters']['value']['max_length'] = '40';
+  /* Filter criterion: Chado Project: Name */
+  $handler->display->display_options['filters']['name_2']['id'] = 'name_2';
+  $handler->display->display_options['filters']['name_2']['table'] = 'project';
+  $handler->display->display_options['filters']['name_2']['field'] = 'name';
+  $handler->display->display_options['filters']['name_2']['relationship'] = 'project_id_to_project';
+  $handler->display->display_options['filters']['name_2']['value'] = array(
+    'All' => 'All',
+  );
+  $handler->display->display_options['filters']['name_2']['group'] = 1;
+  $handler->display->display_options['filters']['name_2']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name_2']['expose']['operator_id'] = 'name_2_op';
+  $handler->display->display_options['filters']['name_2']['expose']['label'] = 'Project';
+  $handler->display->display_options['filters']['name_2']['expose']['description'] = 'The project producing the markers you are interest in';
+  $handler->display->display_options['filters']['name_2']['expose']['operator'] = 'name_2_op';
+  $handler->display->display_options['filters']['name_2']['expose']['identifier'] = 'name_2';
+  $handler->display->display_options['filters']['name_2']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['name_2']['values_form_type'] = 'select';
+  $handler->display->display_options['filters']['name_2']['select_multiple'] = TRUE;
+  $handler->display->display_options['filters']['name_2']['select_optional'] = TRUE;
+  $handler->display->display_options['filters']['name_2']['max_length'] = '40';
   /* Filter criterion: Feature Name */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'feature';
@@ -680,11 +818,32 @@ function kp_defaultviews_genotypes_search() {
   $handler->display->display_options['relationships']['feature_id_to_featureprop']['table'] = 'feature';
   $handler->display->display_options['relationships']['feature_id_to_featureprop']['field'] = 'feature_id_to_featureprop';
   $handler->display->display_options['relationships']['feature_id_to_featureprop']['label'] = 'Marker Type';
+  /* Relationship: Chado Feature: feature_id => Project Feature */
+  $handler->display->display_options['relationships']['feature_id_to_project_feature']['id'] = 'feature_id_to_project_feature';
+  $handler->display->display_options['relationships']['feature_id_to_project_feature']['table'] = 'feature';
+  $handler->display->display_options['relationships']['feature_id_to_project_feature']['field'] = 'feature_id_to_project_feature';
+  $handler->display->display_options['relationships']['feature_id_to_project_feature']['label'] = 'Project Feature';
+  /* Relationship: Chado Project Feature: project_id => Project */
+  $handler->display->display_options['relationships']['project_id_to_project']['id'] = 'project_id_to_project';
+  $handler->display->display_options['relationships']['project_id_to_project']['table'] = 'project_feature';
+  $handler->display->display_options['relationships']['project_id_to_project']['field'] = 'project_id_to_project';
+  $handler->display->display_options['relationships']['project_id_to_project']['relationship'] = 'feature_id_to_project_feature';
+  $handler->display->display_options['relationships']['project_id_to_project']['label'] = 'Project';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Node URL */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['ui_name'] = 'Node URL';
+  $handler->display->display_options['fields']['nid_1']['label'] = '';
+  $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid_1']['alter']['text'] = 'node/[nid]';
+  $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   /* Field: Chado Feature: Feature Id */
   $handler->display->display_options['fields']['feature_id']['id'] = 'feature_id';
   $handler->display->display_options['fields']['feature_id']['table'] = 'feature';
@@ -695,6 +854,9 @@ function kp_defaultviews_genotypes_search() {
   $handler->display->display_options['fields']['name']['table'] = 'feature';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = 'Marker';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = '[nid_1]';
+  $handler->display->display_options['fields']['name']['alter']['target'] = '_blank';
   /* Field: Chado Featureprop: Value */
   $handler->display->display_options['fields']['value']['id'] = 'value';
   $handler->display->display_options['fields']['value']['table'] = 'featureprop';
@@ -862,6 +1024,30 @@ function kp_defaultviews_genotypes_search() {
   $handler->display->display_options['filters']['value']['select_multiple'] = TRUE;
   $handler->display->display_options['filters']['value']['select_optional'] = TRUE;
   $handler->display->display_options['filters']['value']['max_length'] = '40';
+  /* Filter criterion: Chado Project: Name */
+  $handler->display->display_options['filters']['name_2']['id'] = 'name_2';
+  $handler->display->display_options['filters']['name_2']['table'] = 'project';
+  $handler->display->display_options['filters']['name_2']['field'] = 'name';
+  $handler->display->display_options['filters']['name_2']['relationship'] = 'project_id_to_project';
+  $handler->display->display_options['filters']['name_2']['value'] = array(
+    'All' => 'All',
+  );
+  $handler->display->display_options['filters']['name_2']['group'] = 1;
+  $handler->display->display_options['filters']['name_2']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name_2']['expose']['operator_id'] = 'name_2_op';
+  $handler->display->display_options['filters']['name_2']['expose']['label'] = 'Project';
+  $handler->display->display_options['filters']['name_2']['expose']['description'] = 'The project producing the markers you are interest in';
+  $handler->display->display_options['filters']['name_2']['expose']['operator'] = 'name_2_op';
+  $handler->display->display_options['filters']['name_2']['expose']['identifier'] = 'name_2';
+  $handler->display->display_options['filters']['name_2']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['name_2']['values_form_type'] = 'select';
+  $handler->display->display_options['filters']['name_2']['select_multiple'] = TRUE;
+  $handler->display->display_options['filters']['name_2']['select_optional'] = TRUE;
+  $handler->display->display_options['filters']['name_2']['max_length'] = '40';
   /* Filter criterion: Chado Feature: Name */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'feature';

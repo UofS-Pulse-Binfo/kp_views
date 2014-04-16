@@ -4,4 +4,4 @@ description = Provides default views used in KnowPulse
 version = 3.x-1.x
 core = 7.x
 
-files[] = views_handlers/kp_views_groups_plugin.inc
+files[] = handlers/tripal_views_handler_filter_select_project_id.inc

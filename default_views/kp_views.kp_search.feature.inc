@@ -198,30 +198,25 @@ $handler->display->display_options['filters']['type_id']['values_form_type'] = '
 $handler->display->display_options['filters']['type_id']['select_multiple'] = TRUE;
 $handler->display->display_options['filters']['type_id']['select_optional'] = TRUE;
 $handler->display->display_options['filters']['type_id']['max_length'] = '40';
-/* Filter criterion: Chado Project: Name */
-$handler->display->display_options['filters']['name_2']['id'] = 'name_2';
-$handler->display->display_options['filters']['name_2']['table'] = 'project';
-$handler->display->display_options['filters']['name_2']['field'] = 'name';
-$handler->display->display_options['filters']['name_2']['relationship'] = 'project_id_to_project';
-$handler->display->display_options['filters']['name_2']['value'] = array(
-  'All' => 'All',
-);
-$handler->display->display_options['filters']['name_2']['group'] = 1;
-$handler->display->display_options['filters']['name_2']['exposed'] = TRUE;
-$handler->display->display_options['filters']['name_2']['expose']['operator_id'] = 'name_2_op';
-$handler->display->display_options['filters']['name_2']['expose']['label'] = 'Project';
-$handler->display->display_options['filters']['name_2']['expose']['description'] = 'The project producing the markers you are interest in';
-$handler->display->display_options['filters']['name_2']['expose']['operator'] = 'name_2_op';
-$handler->display->display_options['filters']['name_2']['expose']['identifier'] = 'name_2';
-$handler->display->display_options['filters']['name_2']['expose']['remember_roles'] = array(
+/* Filter criterion: Chado Project Feature: Project Id */
+$handler->display->display_options['filters']['project_id']['id'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['table'] = 'project_feature';
+$handler->display->display_options['filters']['project_id']['field'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['relationship'] = 'feature_id_to_project_feature';
+$handler->display->display_options['filters']['project_id']['exposed'] = TRUE;
+$handler->display->display_options['filters']['project_id']['expose']['operator_id'] = 'project_id_op';
+$handler->display->display_options['filters']['project_id']['expose']['label'] = 'Project';
+$handler->display->display_options['filters']['project_id']['expose']['description'] = 'The project producing the sequences you are interested in';
+$handler->display->display_options['filters']['project_id']['expose']['operator'] = 'project_id_op';
+$handler->display->display_options['filters']['project_id']['expose']['identifier'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
   3 => 0,
 );
-$handler->display->display_options['filters']['name_2']['values_form_type'] = 'select';
-$handler->display->display_options['filters']['name_2']['select_multiple'] = TRUE;
-$handler->display->display_options['filters']['name_2']['select_optional'] = TRUE;
-$handler->display->display_options['filters']['name_2']['max_length'] = '40';
+$handler->display->display_options['filters']['project_id']['values_form_type'] = 'select';
+$handler->display->display_options['filters']['project_id']['select_multiple'] = TRUE;
+$handler->display->display_options['filters']['project_id']['max_length'] = '40';
 /* Filter criterion: Feature Name */
 $handler->display->display_options['filters']['name']['id'] = 'name';
 $handler->display->display_options['filters']['name']['table'] = 'feature';
@@ -444,30 +439,25 @@ $handler->display->display_options['filters']['type_id']['values_form_type'] = '
 $handler->display->display_options['filters']['type_id']['select_multiple'] = TRUE;
 $handler->display->display_options['filters']['type_id']['select_optional'] = TRUE;
 $handler->display->display_options['filters']['type_id']['max_length'] = '40';
-/* Filter criterion: Chado Project: Name */
-$handler->display->display_options['filters']['name_2']['id'] = 'name_2';
-$handler->display->display_options['filters']['name_2']['table'] = 'project';
-$handler->display->display_options['filters']['name_2']['field'] = 'name';
-$handler->display->display_options['filters']['name_2']['relationship'] = 'project_id_to_project';
-$handler->display->display_options['filters']['name_2']['value'] = array(
-  'All' => 'All',
-);
-$handler->display->display_options['filters']['name_2']['group'] = 1;
-$handler->display->display_options['filters']['name_2']['exposed'] = TRUE;
-$handler->display->display_options['filters']['name_2']['expose']['operator_id'] = 'name_2_op';
-$handler->display->display_options['filters']['name_2']['expose']['label'] = 'Project';
-$handler->display->display_options['filters']['name_2']['expose']['description'] = 'The project producing the markers you are interest in';
-$handler->display->display_options['filters']['name_2']['expose']['operator'] = 'name_2_op';
-$handler->display->display_options['filters']['name_2']['expose']['identifier'] = 'name_2';
-$handler->display->display_options['filters']['name_2']['expose']['remember_roles'] = array(
+/* Filter criterion: Chado Project Feature: Project Id */
+$handler->display->display_options['filters']['project_id']['id'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['table'] = 'project_feature';
+$handler->display->display_options['filters']['project_id']['field'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['relationship'] = 'feature_id_to_project_feature';
+$handler->display->display_options['filters']['project_id']['exposed'] = TRUE;
+$handler->display->display_options['filters']['project_id']['expose']['operator_id'] = 'project_id_op';
+$handler->display->display_options['filters']['project_id']['expose']['label'] = 'Project';
+$handler->display->display_options['filters']['project_id']['expose']['description'] = 'The project identifying the genetic variations you are interested in';
+$handler->display->display_options['filters']['project_id']['expose']['operator'] = 'project_id_op';
+$handler->display->display_options['filters']['project_id']['expose']['identifier'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
   3 => 0,
 );
-$handler->display->display_options['filters']['name_2']['values_form_type'] = 'select';
-$handler->display->display_options['filters']['name_2']['select_multiple'] = TRUE;
-$handler->display->display_options['filters']['name_2']['select_optional'] = TRUE;
-$handler->display->display_options['filters']['name_2']['max_length'] = '40';
+$handler->display->display_options['filters']['project_id']['values_form_type'] = 'select';
+$handler->display->display_options['filters']['project_id']['select_multiple'] = TRUE;
+$handler->display->display_options['filters']['project_id']['max_length'] = '40';
 /* Filter criterion: Feature Name */
 $handler->display->display_options['filters']['name']['id'] = 'name';
 $handler->display->display_options['filters']['name']['table'] = 'feature';
@@ -588,9 +578,9 @@ $handler->display->display_options['fields']['nid_1']['element_label_colon'] = F
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'feature';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
-$handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-$handler->display->display_options['fields']['name']['alter']['path'] = '[nid_1]';
-$handler->display->display_options['fields']['name']['alter']['target'] = '_blank';
+$handler->display->display_options['fields']['name_1']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['name_1']['alter']['path'] = '[nid_1]';
+$handler->display->display_options['fields']['name_1']['alter']['target'] = '_blank';
   /* Field: Chado Featureprop: Value */
   $handler->display->display_options['fields']['value']['id'] = 'value';
   $handler->display->display_options['fields']['value']['table'] = 'featureprop';
@@ -624,12 +614,18 @@ $handler->display->display_options['fields']['name']['alter']['target'] = '_blan
   $handler->display->display_options['filters']['nid']['operator'] = '>';
   $handler->display->display_options['filters']['nid']['value']['value'] = '0';
   $handler->display->display_options['filters']['nid']['group'] = 1;
-  /* Filter criterion: Chado Cvterm: Name */
-  $handler->display->display_options['filters']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['filters']['name_1']['table'] = 'cvterm';
-  $handler->display->display_options['filters']['name_1']['field'] = 'name';
-  $handler->display->display_options['filters']['name_1']['value'] = 'marker';
-  $handler->display->display_options['filters']['name_1']['group'] = 1;
+  /* Filter criterion: Feature Type ID */
+  $handler->display->display_options['filters']['type_id_1']['id'] = 'type_id_1';
+  $handler->display->display_options['filters']['type_id_1']['table'] = 'feature';
+  $handler->display->display_options['filters']['type_id_1']['field'] = 'type_id';
+  $handler->display->display_options['filters']['type_id_1']['ui_name'] = 'Feature Type ID';
+  $handler->display->display_options['filters']['type_id_1']['value'] = array(
+    3686 => '3686',
+  );
+  $handler->display->display_options['filters']['type_id_1']['group'] = 1;
+  $handler->display->display_options['filters']['type_id_1']['values_form_type'] = 'select';
+  $handler->display->display_options['filters']['type_id_1']['select_multiple'] = TRUE;
+  $handler->display->display_options['filters']['type_id_1']['max_length'] = '40';
   /* Filter criterion: Chado Featureprop: Type Id */
   $handler->display->display_options['filters']['type_id']['id'] = 'type_id';
   $handler->display->display_options['filters']['type_id']['table'] = 'featureprop';
@@ -712,30 +708,25 @@ $handler->display->display_options['fields']['name']['alter']['target'] = '_blan
   $handler->display->display_options['filters']['value']['select_multiple'] = TRUE;
   $handler->display->display_options['filters']['value']['select_optional'] = TRUE;
   $handler->display->display_options['filters']['value']['max_length'] = '40';
-  /* Filter criterion: Chado Project: Name */
-  $handler->display->display_options['filters']['name_2']['id'] = 'name_2';
-  $handler->display->display_options['filters']['name_2']['table'] = 'project';
-  $handler->display->display_options['filters']['name_2']['field'] = 'name';
-  $handler->display->display_options['filters']['name_2']['relationship'] = 'project_id_to_project';
-  $handler->display->display_options['filters']['name_2']['value'] = array(
-    'All' => 'All',
-  );
-  $handler->display->display_options['filters']['name_2']['group'] = 1;
-  $handler->display->display_options['filters']['name_2']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['name_2']['expose']['operator_id'] = 'name_2_op';
-  $handler->display->display_options['filters']['name_2']['expose']['label'] = 'Project';
-  $handler->display->display_options['filters']['name_2']['expose']['description'] = 'The project producing the markers you are interest in';
-  $handler->display->display_options['filters']['name_2']['expose']['operator'] = 'name_2_op';
-  $handler->display->display_options['filters']['name_2']['expose']['identifier'] = 'name_2';
-  $handler->display->display_options['filters']['name_2']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['name_2']['values_form_type'] = 'select';
-  $handler->display->display_options['filters']['name_2']['select_multiple'] = TRUE;
-  $handler->display->display_options['filters']['name_2']['select_optional'] = TRUE;
-  $handler->display->display_options['filters']['name_2']['max_length'] = '40';
+/* Filter criterion: Chado Project Feature: Project Id */
+$handler->display->display_options['filters']['project_id']['id'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['table'] = 'project_feature';
+$handler->display->display_options['filters']['project_id']['field'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['relationship'] = 'feature_id_to_project_feature';
+$handler->display->display_options['filters']['project_id']['exposed'] = TRUE;
+$handler->display->display_options['filters']['project_id']['expose']['operator_id'] = 'project_id_op';
+$handler->display->display_options['filters']['project_id']['expose']['label'] = 'Project';
+$handler->display->display_options['filters']['project_id']['expose']['description'] = 'The project producing the markers you are interest in';
+$handler->display->display_options['filters']['project_id']['expose']['operator'] = 'project_id_op';
+$handler->display->display_options['filters']['project_id']['expose']['identifier'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['project_id']['values_form_type'] = 'select';
+$handler->display->display_options['filters']['project_id']['select_multiple'] = TRUE;
+$handler->display->display_options['filters']['project_id']['max_length'] = '40';
   /* Filter criterion: Feature Name */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'feature';
@@ -920,12 +911,18 @@ function kp_defaultviews_genotypes_search() {
   $handler->display->display_options['filters']['nid']['operator'] = '>';
   $handler->display->display_options['filters']['nid']['value']['value'] = '0';
   $handler->display->display_options['filters']['nid']['group'] = 1;
-  /* Filter criterion: Chado Cvterm: Name */
-  $handler->display->display_options['filters']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['filters']['name_1']['table'] = 'cvterm';
-  $handler->display->display_options['filters']['name_1']['field'] = 'name';
-  $handler->display->display_options['filters']['name_1']['value'] = 'marker';
-  $handler->display->display_options['filters']['name_1']['group'] = 1;
+/* Filter criterion: Feature Type ID */
+$handler->display->display_options['filters']['type_id_1']['id'] = 'type_id_1';
+$handler->display->display_options['filters']['type_id_1']['table'] = 'feature';
+$handler->display->display_options['filters']['type_id_1']['field'] = 'type_id';
+$handler->display->display_options['filters']['type_id_1']['ui_name'] = 'Feature Type ID';
+$handler->display->display_options['filters']['type_id_1']['value'] = array(
+  3686 => '3686',
+);
+$handler->display->display_options['filters']['type_id_1']['group'] = 1;
+$handler->display->display_options['filters']['type_id_1']['values_form_type'] = 'select';
+$handler->display->display_options['filters']['type_id_1']['select_multiple'] = TRUE;
+$handler->display->display_options['filters']['type_id_1']['max_length'] = '40';
   /* Filter criterion: Chado Featureprop: Type Id */
   $handler->display->display_options['filters']['type_id']['id'] = 'type_id';
   $handler->display->display_options['filters']['type_id']['table'] = 'featureprop';
@@ -1024,30 +1021,25 @@ function kp_defaultviews_genotypes_search() {
   $handler->display->display_options['filters']['value']['select_multiple'] = TRUE;
   $handler->display->display_options['filters']['value']['select_optional'] = TRUE;
   $handler->display->display_options['filters']['value']['max_length'] = '40';
-  /* Filter criterion: Chado Project: Name */
-  $handler->display->display_options['filters']['name_2']['id'] = 'name_2';
-  $handler->display->display_options['filters']['name_2']['table'] = 'project';
-  $handler->display->display_options['filters']['name_2']['field'] = 'name';
-  $handler->display->display_options['filters']['name_2']['relationship'] = 'project_id_to_project';
-  $handler->display->display_options['filters']['name_2']['value'] = array(
-    'All' => 'All',
-  );
-  $handler->display->display_options['filters']['name_2']['group'] = 1;
-  $handler->display->display_options['filters']['name_2']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['name_2']['expose']['operator_id'] = 'name_2_op';
-  $handler->display->display_options['filters']['name_2']['expose']['label'] = 'Project';
-  $handler->display->display_options['filters']['name_2']['expose']['description'] = 'The project producing the markers you are interest in';
-  $handler->display->display_options['filters']['name_2']['expose']['operator'] = 'name_2_op';
-  $handler->display->display_options['filters']['name_2']['expose']['identifier'] = 'name_2';
-  $handler->display->display_options['filters']['name_2']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['name_2']['values_form_type'] = 'select';
-  $handler->display->display_options['filters']['name_2']['select_multiple'] = TRUE;
-  $handler->display->display_options['filters']['name_2']['select_optional'] = TRUE;
-  $handler->display->display_options['filters']['name_2']['max_length'] = '40';
+/* Filter criterion: Chado Project Feature: Project Id */
+$handler->display->display_options['filters']['project_id']['id'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['table'] = 'project_feature';
+$handler->display->display_options['filters']['project_id']['field'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['relationship'] = 'feature_id_to_project_feature';
+$handler->display->display_options['filters']['project_id']['exposed'] = TRUE;
+$handler->display->display_options['filters']['project_id']['expose']['operator_id'] = 'project_id_op';
+$handler->display->display_options['filters']['project_id']['expose']['label'] = 'Project';
+$handler->display->display_options['filters']['project_id']['expose']['description'] = 'The project producing the markers you are interest in';
+$handler->display->display_options['filters']['project_id']['expose']['operator'] = 'project_id_op';
+$handler->display->display_options['filters']['project_id']['expose']['identifier'] = 'project_id';
+$handler->display->display_options['filters']['project_id']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['project_id']['values_form_type'] = 'select';
+$handler->display->display_options['filters']['project_id']['select_multiple'] = TRUE;
+$handler->display->display_options['filters']['project_id']['max_length'] = '40';
   /* Filter criterion: Chado Feature: Name */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'feature';

@@ -822,19 +822,6 @@ $handler->display->display_options['relationships']['feature_id_to_featureprop']
 $handler->display->display_options['relationships']['feature_id_to_featureprop']['field'] = 'feature_id_to_featureprop';
 $handler->display->display_options['relationships']['feature_id_to_featureprop']['ui_name'] = 'Feature to Feature Property';
 $handler->display->display_options['relationships']['feature_id_to_featureprop']['label'] = 'Marker Type';
-/* Relationship: Feature to Project Feature */
-$handler->display->display_options['relationships']['feature_id_to_project_feature']['id'] = 'feature_id_to_project_feature';
-$handler->display->display_options['relationships']['feature_id_to_project_feature']['table'] = 'feature';
-$handler->display->display_options['relationships']['feature_id_to_project_feature']['field'] = 'feature_id_to_project_feature';
-$handler->display->display_options['relationships']['feature_id_to_project_feature']['ui_name'] = 'Feature to Project Feature';
-$handler->display->display_options['relationships']['feature_id_to_project_feature']['label'] = 'Project Feature';
-/* Relationship: Project Feature to Project */
-$handler->display->display_options['relationships']['project_id_to_project']['id'] = 'project_id_to_project';
-$handler->display->display_options['relationships']['project_id_to_project']['table'] = 'project_feature';
-$handler->display->display_options['relationships']['project_id_to_project']['field'] = 'project_id_to_project';
-$handler->display->display_options['relationships']['project_id_to_project']['relationship'] = 'feature_id_to_project_feature';
-$handler->display->display_options['relationships']['project_id_to_project']['ui_name'] = 'Project Feature to Project';
-$handler->display->display_options['relationships']['project_id_to_project']['label'] = 'Project';
 /* Field: NID */
 $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -1046,26 +1033,27 @@ $handler->display->display_options['filters']['value']['values_form_type'] = 'se
 $handler->display->display_options['filters']['value']['select_multiple'] = TRUE;
 $handler->display->display_options['filters']['value']['select_optional'] = TRUE;
 $handler->display->display_options['filters']['value']['max_length'] = '40';
-/* Filter criterion: Project ID */
+/* Filter criterion: Natural Diversity Genotype Experiments: Project ID */
 $handler->display->display_options['filters']['project_id']['id'] = 'project_id';
-$handler->display->display_options['filters']['project_id']['table'] = 'project_feature';
+$handler->display->display_options['filters']['project_id']['table'] = 'nd_genotype_experiment';
 $handler->display->display_options['filters']['project_id']['field'] = 'project_id';
-$handler->display->display_options['filters']['project_id']['relationship'] = 'feature_id_to_project_feature';
-$handler->display->display_options['filters']['project_id']['ui_name'] = 'Project ID';
-$handler->display->display_options['filters']['project_id']['value'] = array();
+$handler->display->display_options['filters']['project_id']['relationship'] = 'feature_id_to_nd_genotype_experiment';
+$handler->display->display_options['filters']['project_id']['value'] = 'All';
 $handler->display->display_options['filters']['project_id']['exposed'] = TRUE;
 $handler->display->display_options['filters']['project_id']['expose']['operator_id'] = 'project_id_op';
 $handler->display->display_options['filters']['project_id']['expose']['label'] = 'Project';
-$handler->display->display_options['filters']['project_id']['expose']['description'] = 'The project producing the markers you are interest in';
+$handler->display->display_options['filters']['project_id']['expose']['description'] = 'The project the genotypes you are interested in where generated as part of';
 $handler->display->display_options['filters']['project_id']['expose']['operator'] = 'project_id_op';
 $handler->display->display_options['filters']['project_id']['expose']['identifier'] = 'project_id';
 $handler->display->display_options['filters']['project_id']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
+  4 => 0,
+  5 => 0,
   3 => 0,
 );
 $handler->display->display_options['filters']['project_id']['values_form_type'] = 'select';
-$handler->display->display_options['filters']['project_id']['select_multiple'] = TRUE;
+$handler->display->display_options['filters']['project_id']['select_optional'] = TRUE;
 $handler->display->display_options['filters']['project_id']['max_length'] = '40';
 /* Filter criterion: Feature Name */
 $handler->display->display_options['filters']['name']['id'] = 'name';

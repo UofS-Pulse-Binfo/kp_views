@@ -48,6 +48,9 @@ function kp_views_views_default_views() {
   $view = kp_defaultviews_genotypes_search();
   $views[$view->name] = $view;
 
+  $view = kp_defaultviews_germplasm_genotyped_search();
+  $views[$view->name] = $view;
+
   // Tag: KP Pages //////////////////////////////
   $view = kp_defaultviews_feature_genotype_piechart();
   $views[$view->name] = $view;

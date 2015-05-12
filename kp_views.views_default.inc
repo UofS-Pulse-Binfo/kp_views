@@ -6,6 +6,7 @@
  */
 
 require_once 'default_views/kp_views.kp_search.feature.inc';
+require_once 'default_views/kp_views.kp_search.germplasm.inc';
 require_once 'default_views/kp_views.uofs_research.organism.inc';
 require_once 'default_views/kp_views.uofs_research.misc.inc';
 require_once 'default_views/kp_views.tripal_page_charts.inc';
@@ -49,6 +50,19 @@ function kp_views_views_default_views() {
   $views[$view->name] = $view;
 
   $view = kp_defaultviews_germplasm_genotyped_search();
+  $views[$view->name] = $view;
+
+  // Tag :Kp Search: Germplasm //////////////////
+  $view = kp_defaultviews_germplasm_search();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_germplasm_variety_search();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_germplasm_ril_search();
+  $views[$view->name] = $view;
+
+  $view = kp_defaultviews_germplasm_cross_search();
   $views[$view->name] = $view;
 
   // Tag: KP Pages //////////////////////////////

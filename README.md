@@ -1,6 +1,8 @@
 # KnowPulse Views
 Contains KnowPulse-specific Views.
 
+** Not tested on generic Tripal sites; May require KnowPulse-specific configuration **
+
 ## Feature Views
 * Sequence Search: Provides a search for residue-containing features.
 * Variant Search: Provides a search for sequence variants.

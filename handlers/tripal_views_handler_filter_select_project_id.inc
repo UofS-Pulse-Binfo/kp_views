@@ -15,7 +15,8 @@ class tripal_views_handler_filter_select_project_id extends tripal_views_handler
    *   An array of full qualified where clauses (ie: table.myfield = 'fred')
    */
   function get_select_option_where() {
-    $where = parent::get_select_option_where();
+    
+    $where = parent::get_select_option_where($table, $generic_placeholder);
 
     // We only know how to handle this if the base table of the view = feature
     if ($this->view->base_table == 'feature') {

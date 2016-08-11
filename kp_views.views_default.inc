@@ -46,12 +46,6 @@ function kp_views_views_default_views() {
   $view = kp_defaultviews_markers_search();
   $views[$view->name] = $view;
 
-  $view = kp_defaultviews_genotypes_search();
-  $views[$view->name] = $view;
-
-  $view = kp_defaultviews_germplasm_genotyped_search();
-  $views[$view->name] = $view;
-
   // Tag :Kp Search: Germplasm //////////////////
   $view = kp_defaultviews_germplasm_search();
   $views[$view->name] = $view;
@@ -66,9 +60,6 @@ function kp_views_views_default_views() {
   $views[$view->name] = $view;
 
   // Tag: KP Pages //////////////////////////////
-  $view = kp_defaultviews_feature_genotype_piechart();
-  $views[$view->name] = $view;
-
   $view = kp_defaultviews_feature_type_piechart();
   $views[$view->name] = $view;
 

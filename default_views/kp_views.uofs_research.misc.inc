@@ -10,109 +10,88 @@
  * Defines the uofs_publications View
  */
 function kp_defaultviews_uofs_publications() {
+  $view = new view();
+  $view->name = 'uofs_publications_tripal_3';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'TPUB__0000002';
+  $view->human_name = 'UofS Publications Tripal 3';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
-$view = new view();
-$view->name = 'uofs_publications';
-$view->description = '';
-$view->tag = 'UofS Research';
-$view->base_table = 'pub';
-$view->human_name = 'UofS Publications';
-$view->core = 7;
-$view->api_version = '3.0';
-$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Publications';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Publication: Entity ID */
+  $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
+  $handler->display->display_options['fields']['entity_id']['table'] = 'TPUB__0000002';
+  $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
+  $handler->display->display_options['fields']['entity_id']['label'] = '';
+  $handler->display->display_options['fields']['entity_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entity_id']['element_label_colon'] = FALSE;
+  /* Field: Publication: Citation */
+  $handler->display->display_options['fields']['tpub__citation']['id'] = 'tpub__citation';
+  $handler->display->display_options['fields']['tpub__citation']['table'] = 'TPUB__0000002';
+  $handler->display->display_options['fields']['tpub__citation']['field'] = 'tpub__citation';
+  $handler->display->display_options['fields']['tpub__citation']['label'] = '';
+  $handler->display->display_options['fields']['tpub__citation']['alter']['path'] = 'publication/[entity_id]';
+  $handler->display->display_options['fields']['tpub__citation']['element_label_colon'] = FALSE;
+  /* Field: Publication: Entity ID */
+  $handler->display->display_options['fields']['entity_id_1']['id'] = 'entity_id_1';
+  $handler->display->display_options['fields']['entity_id_1']['table'] = 'TPUB__0000002';
+  $handler->display->display_options['fields']['entity_id_1']['field'] = 'entity_id';
+  $handler->display->display_options['fields']['entity_id_1']['label'] = '';
+  $handler->display->display_options['fields']['entity_id_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['entity_id_1']['alter']['text'] = '<br /><a href="../publication/[entity_id]">More Information</a>';
+  $handler->display->display_options['fields']['entity_id_1']['element_label_colon'] = FALSE;
+  /* Filter criterion: Publication: Publication Year */
+  $handler->display->display_options['filters']['tpub__year']['id'] = 'tpub__year';
+  $handler->display->display_options['filters']['tpub__year']['table'] = 'TPUB__0000002';
+  $handler->display->display_options['filters']['tpub__year']['field'] = 'tpub__year';
+  $handler->display->display_options['filters']['tpub__year']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['tpub__year']['expose']['operator_id'] = 'tpub__year_op';
+  $handler->display->display_options['filters']['tpub__year']['expose']['label'] = 'Year Published';
+  $handler->display->display_options['filters']['tpub__year']['expose']['description'] = 'The year the article was published in';
+  $handler->display->display_options['filters']['tpub__year']['expose']['operator'] = 'tpub__year_op';
+  $handler->display->display_options['filters']['tpub__year']['expose']['identifier'] = 'pyear';
+  $handler->display->display_options['filters']['tpub__year']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+  );
 
-/* Display: Master */
-$handler = $view->new_display('default', 'Master', 'default');
-$handler->display->display_options['title'] = 'Publications';
-$handler->display->display_options['use_more_always'] = FALSE;
-$handler->display->display_options['access']['type'] = 'none';
-$handler->display->display_options['cache']['type'] = 'none';
-$handler->display->display_options['query']['type'] = 'views_query';
-$handler->display->display_options['exposed_form']['type'] = 'basic';
-$handler->display->display_options['pager']['type'] = 'full';
-$handler->display->display_options['pager']['options']['items_per_page'] = '25';
-$handler->display->display_options['pager']['options']['offset'] = '0';
-$handler->display->display_options['pager']['options']['id'] = '0';
-$handler->display->display_options['pager']['options']['quantity'] = '9';
-$handler->display->display_options['style_plugin'] = 'default';
-$handler->display->display_options['row_plugin'] = 'fields';
-/* Relationship: Chado Pub: pub_id => Pubprop */
-$handler->display->display_options['relationships']['pub_id_to_pubprop']['id'] = 'pub_id_to_pubprop';
-$handler->display->display_options['relationships']['pub_id_to_pubprop']['table'] = 'pub';
-$handler->display->display_options['relationships']['pub_id_to_pubprop']['field'] = 'pub_id_to_pubprop';
-$handler->display->display_options['relationships']['pub_id_to_pubprop']['label'] = 'PubProp Authors';
-/* Field: Content: Nid */
-$handler->display->display_options['fields']['nid']['id'] = 'nid';
-$handler->display->display_options['fields']['nid']['table'] = 'node';
-$handler->display->display_options['fields']['nid']['field'] = 'nid';
-$handler->display->display_options['fields']['nid']['label'] = '';
-$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-$handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-/* Field: Chado Pub: Pyear */
-$handler->display->display_options['fields']['pyear']['id'] = 'pyear';
-$handler->display->display_options['fields']['pyear']['table'] = 'pub';
-$handler->display->display_options['fields']['pyear']['field'] = 'pyear';
-$handler->display->display_options['fields']['pyear']['label'] = '';
-$handler->display->display_options['fields']['pyear']['element_label_colon'] = FALSE;
-/* Field: Chado Pub: Title */
-$handler->display->display_options['fields']['title']['id'] = 'title';
-$handler->display->display_options['fields']['title']['table'] = 'pub';
-$handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['label'] = '';
-$handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-$handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]';
-$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-/* Field: Chado Pubprop: Value */
-$handler->display->display_options['fields']['value']['id'] = 'value';
-$handler->display->display_options['fields']['value']['table'] = 'pubprop';
-$handler->display->display_options['fields']['value']['field'] = 'value';
-$handler->display->display_options['fields']['value']['relationship'] = 'pub_id_to_pubprop';
-$handler->display->display_options['fields']['value']['label'] = '';
-$handler->display->display_options['fields']['value']['element_label_colon'] = FALSE;
-/* Filter criterion: Chado Cvterm: Name */
-$handler->display->display_options['filters']['name']['id'] = 'name';
-$handler->display->display_options['filters']['name']['table'] = 'cvterm';
-$handler->display->display_options['filters']['name']['field'] = 'name';
-$handler->display->display_options['filters']['name']['relationship'] = 'pub_id_to_pubprop';
-$handler->display->display_options['filters']['name']['value'] = 'Authors';
-/* Filter criterion: Chado Pub: Title */
-$handler->display->display_options['filters']['title']['id'] = 'title';
-$handler->display->display_options['filters']['title']['table'] = 'pub';
-$handler->display->display_options['filters']['title']['field'] = 'title';
-$handler->display->display_options['filters']['title']['operator'] = 'contains';
-$handler->display->display_options['filters']['title']['exposed'] = TRUE;
-$handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-$handler->display->display_options['filters']['title']['expose']['label'] = 'Title Contains';
-$handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-$handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-$handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-  2 => '2',
-  1 => 0,
-  3 => 0,
-);
-/* Filter criterion: Chado Pubprop: Value */
-$handler->display->display_options['filters']['value']['id'] = 'value';
-$handler->display->display_options['filters']['value']['table'] = 'pubprop';
-$handler->display->display_options['filters']['value']['field'] = 'value';
-$handler->display->display_options['filters']['value']['relationship'] = 'pub_id_to_pubprop';
-$handler->display->display_options['filters']['value']['operator'] = 'contains';
-$handler->display->display_options['filters']['value']['exposed'] = TRUE;
-$handler->display->display_options['filters']['value']['expose']['operator_id'] = 'value_op';
-$handler->display->display_options['filters']['value']['expose']['label'] = 'Author';
-$handler->display->display_options['filters']['value']['expose']['operator'] = 'value_op';
-$handler->display->display_options['filters']['value']['expose']['identifier'] = 'author';
-$handler->display->display_options['filters']['value']['expose']['remember_roles'] = array(
-  2 => '2',
-  1 => 0,
-  3 => 0,
-);
-
-/* Display: Page */
-$handler = $view->new_display('page', 'Page', 'page');
-$handler->display->display_options['path'] = 'research/publications';
-$handler->display->display_options['menu']['type'] = 'normal';
-$handler->display->display_options['menu']['title'] = 'Publications';
-$handler->display->display_options['menu']['name'] = 'menu-our-research';
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'research/publications';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Publications';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-our-research';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   return $view;
 }

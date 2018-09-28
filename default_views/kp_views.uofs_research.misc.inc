@@ -57,10 +57,65 @@ function kp_defaultviews_uofs_publications() {
   $handler->display->display_options['fields']['entity_id_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['entity_id_1']['alter']['text'] = '<br /><a href="../publication/[entity_id]">More Information</a>';
   $handler->display->display_options['fields']['entity_id_1']['element_label_colon'] = FALSE;
+  /* Filter criterion: Publication: Title */
+  $handler->display->display_options['filters']['tpub__title']['id'] = 'tpub__title';
+  $handler->display->display_options['filters']['tpub__title']['table'] = 'TPUB__0000002';
+  $handler->display->display_options['filters']['tpub__title']['field'] = 'tpub__title';
+  $handler->display->display_options['filters']['tpub__title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['tpub__title']['group'] = 1;
+  $handler->display->display_options['filters']['tpub__title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['tpub__title']['expose']['operator_id'] = 'tpub__title_op';
+  $handler->display->display_options['filters']['tpub__title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['tpub__title']['expose']['description'] = 'The title of the publication (partial titles are accepted)';
+  $handler->display->display_options['filters']['tpub__title']['expose']['operator'] = 'tpub__title_op';
+  $handler->display->display_options['filters']['tpub__title']['expose']['identifier'] = 'tpub__title';
+  $handler->display->display_options['filters']['tpub__title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Publication: Authors */
+  $handler->display->display_options['filters']['tpub__authors']['id'] = 'tpub__authors';
+  $handler->display->display_options['filters']['tpub__authors']['table'] = 'TPUB__0000002';
+  $handler->display->display_options['filters']['tpub__authors']['field'] = 'tpub__authors';
+  $handler->display->display_options['filters']['tpub__authors']['operator'] = 'contains';
+  $handler->display->display_options['filters']['tpub__authors']['group'] = 1;
+  $handler->display->display_options['filters']['tpub__authors']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['tpub__authors']['expose']['operator_id'] = 'tpub__authors_op';
+  $handler->display->display_options['filters']['tpub__authors']['expose']['label'] = 'Authors';
+  $handler->display->display_options['filters']['tpub__authors']['expose']['description'] = 'The name of a single author you are interested in (partial names are accepted)';
+  $handler->display->display_options['filters']['tpub__authors']['expose']['operator'] = 'tpub__authors_op';
+  $handler->display->display_options['filters']['tpub__authors']['expose']['identifier'] = 'tpub__authors';
+  $handler->display->display_options['filters']['tpub__authors']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+  );
   /* Filter criterion: Publication: Publication Year */
   $handler->display->display_options['filters']['tpub__year']['id'] = 'tpub__year';
   $handler->display->display_options['filters']['tpub__year']['table'] = 'TPUB__0000002';
   $handler->display->display_options['filters']['tpub__year']['field'] = 'tpub__year';
+  $handler->display->display_options['filters']['tpub__year']['group'] = 1;
   $handler->display->display_options['filters']['tpub__year']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tpub__year']['expose']['operator_id'] = 'tpub__year_op';
   $handler->display->display_options['filters']['tpub__year']['expose']['label'] = 'Year Published';

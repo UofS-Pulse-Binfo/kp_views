@@ -63,6 +63,11 @@ function kp_defaultviews_uofs_publications() {
   $handler->display->display_options['fields']['tpub__citation']['element_class'] = 'views-field views-field-title';
   $handler->display->display_options['fields']['tpub__citation']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tpub__citation']['element_default_classes'] = FALSE;
+  /* Sort criterion: Publication: Publication Year */
+  $handler->display->display_options['sorts']['tpub__year']['id'] = 'tpub__year';
+  $handler->display->display_options['sorts']['tpub__year']['table'] = 'TPUB__0000002';
+  $handler->display->display_options['sorts']['tpub__year']['field'] = 'tpub__year';
+  $handler->display->display_options['sorts']['tpub__year']['order'] = 'DESC';
   /* Filter criterion: Publication: Title */
   $handler->display->display_options['filters']['tpub__title']['id'] = 'tpub__title';
   $handler->display->display_options['filters']['tpub__title']['table'] = 'TPUB__0000002';

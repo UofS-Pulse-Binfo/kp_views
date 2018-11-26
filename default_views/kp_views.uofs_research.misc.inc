@@ -34,6 +34,7 @@ function kp_defaultviews_uofs_publications() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'view-uofs-publications';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Publication: Entity ID */
   $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
@@ -42,21 +43,26 @@ function kp_defaultviews_uofs_publications() {
   $handler->display->display_options['fields']['entity_id']['label'] = '';
   $handler->display->display_options['fields']['entity_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['entity_id']['element_label_colon'] = FALSE;
+  /* Field: Publication: Publication Year */
+  $handler->display->display_options['fields']['tpub__year']['id'] = 'tpub__year';
+  $handler->display->display_options['fields']['tpub__year']['table'] = 'TPUB__0000002';
+  $handler->display->display_options['fields']['tpub__year']['field'] = 'tpub__year';
+  $handler->display->display_options['fields']['tpub__year']['label'] = '';
+  $handler->display->display_options['fields']['tpub__year']['element_type'] = 'div';
+  $handler->display->display_options['fields']['tpub__year']['element_class'] = 'views-field views-field-pyear';
+  $handler->display->display_options['fields']['tpub__year']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tpub__year']['element_default_classes'] = FALSE;
   /* Field: Publication: Citation */
   $handler->display->display_options['fields']['tpub__citation']['id'] = 'tpub__citation';
   $handler->display->display_options['fields']['tpub__citation']['table'] = 'TPUB__0000002';
   $handler->display->display_options['fields']['tpub__citation']['field'] = 'tpub__citation';
   $handler->display->display_options['fields']['tpub__citation']['label'] = '';
+  $handler->display->display_options['fields']['tpub__citation']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['tpub__citation']['alter']['path'] = 'publication/[entity_id]';
+  $handler->display->display_options['fields']['tpub__citation']['element_type'] = 'div';
+  $handler->display->display_options['fields']['tpub__citation']['element_class'] = 'views-field views-field-title';
   $handler->display->display_options['fields']['tpub__citation']['element_label_colon'] = FALSE;
-  /* Field: Publication: Entity ID */
-  $handler->display->display_options['fields']['entity_id_1']['id'] = 'entity_id_1';
-  $handler->display->display_options['fields']['entity_id_1']['table'] = 'TPUB__0000002';
-  $handler->display->display_options['fields']['entity_id_1']['field'] = 'entity_id';
-  $handler->display->display_options['fields']['entity_id_1']['label'] = '';
-  $handler->display->display_options['fields']['entity_id_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['entity_id_1']['alter']['text'] = '<br /><a href="../publication/[entity_id]">More Information</a>';
-  $handler->display->display_options['fields']['entity_id_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tpub__citation']['element_default_classes'] = FALSE;
   /* Filter criterion: Publication: Title */
   $handler->display->display_options['filters']['tpub__title']['id'] = 'tpub__title';
   $handler->display->display_options['filters']['tpub__title']['table'] = 'TPUB__0000002';

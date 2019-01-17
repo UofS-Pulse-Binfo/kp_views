@@ -15,7 +15,7 @@ function kp_defaultviews_uofs_publications() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'TPUB__0000002';
-  $view->human_name = 'UofS Publications Tripal 3';
+  $view->human_name = 'UofS Tripal3 Publications';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

@@ -58,7 +58,7 @@ function kp_defaultviews_uofs_publications() {
   $handler->display->display_options['fields']['tpub__citation']['field'] = 'tpub__citation';
   $handler->display->display_options['fields']['tpub__citation']['label'] = '';
   $handler->display->display_options['fields']['tpub__citation']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['tpub__citation']['alter']['path'] = 'publication/[entity_id]';
+  $handler->display->display_options['fields']['tpub__citation']['alter']['path'] = 'bio_data/[entity_id]';
   $handler->display->display_options['fields']['tpub__citation']['element_type'] = 'div';
   $handler->display->display_options['fields']['tpub__citation']['element_class'] = 'views-field views-field-title';
   $handler->display->display_options['fields']['tpub__citation']['element_label_colon'] = FALSE;
